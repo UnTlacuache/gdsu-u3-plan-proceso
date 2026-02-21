@@ -1,0 +1,57 @@
+name: u3_tarea2
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-test-package:
+    runs-on: ubuntu-18.04
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup tools
+        run: |
+          cd u3_tarea2
+          chmod +x setup.sh
+          ./setup.sh
+
+      - name: make lint
+        run: |
+          cd u3_tarea2
+          make lint
+
+      - name: make build
+        run: |
+          cd u3_tarea2
+          make build
+
+      - name: make unit-tests
+        run: |
+          cd u3_tarea2
+          make unit-tests
+
+      - name: make validate
+        run: |
+          cd u3_tarea2
+          make validate
+
+      - name: make integration-tests
+        run: |
+          cd u3_tarea2
+          make integration-tests
+
+      - name: make package
+        run: |
+          cd u3_tarea2
+          make package
+
+      - name: Upload package artifact
+        if: github.ref == 'refs/heads/main'
+        uses: actions/upload-artifact@v4
+        with:
+          name: awesome-website
+          path: u3_tarea2/awesome-website.zip
