@@ -1,0 +1,62 @@
+name: u3_tarea3
+
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - "*"
+
+jobs:
+  build-test-package-release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup tools
+        run: |
+          cd u3_tarea2
+          chmod +x setup.sh
+          ./setup.sh
+
+      - name: make lint
+        run: |
+          cd u3_tarea2
+          make lint
+
+      - name: make build
+        run: |
+          cd u3_tarea2
+          make build
+
+      - name: make unit-tests
+        run: |
+          cd u3_tarea2
+          make unit-tests
+
+      - name: make validate
+        run: |
+          cd u3_tarea2
+          make validate
+
+      - name: make integration-tests
+        run: |
+          cd u3_tarea2
+          make integration-tests
+
+      - name: make package
+        run: |
+          cd u3_tarea2
+          make package
+
+      - name: Create GitHub Release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.ref_name }}
+          name: ${{ github.ref_name }}
+          body_path: u3_tarea2/DEPLOY.md
+          files: |
+            u3_tarea2/awesome-website.zip
