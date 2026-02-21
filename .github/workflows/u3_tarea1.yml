@@ -1,0 +1,45 @@
+name: u3_tarea1
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup tools
+        run: |
+          cd u3_tarea1
+          chmod +x setup.sh
+          ./setup.sh
+
+      - name: make lint
+        run: |
+          cd u3_tarea1
+          make lint
+
+      - name: make build
+        run: |
+          cd u3_tarea1
+          make build
+
+      - name: make unit-tests
+        run: |
+          cd u3_tarea1
+          make unit-tests
+
+      - name: make validate
+        run: |
+          cd u3_tarea1
+          make validate
+
+      - name: make integration-tests
+        run: |
+          cd u3_tarea1
+          make integration-tests
