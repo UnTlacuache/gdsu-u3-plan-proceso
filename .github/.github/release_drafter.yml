@@ -1,0 +1,19 @@
+name-template: '$RESOLVED_VERSION'
+tag-template: '$RESOLVED_VERSION'
+
+categories:
+  - title: '🚀 Nuevas funcionalidades'
+    labels:
+      - feature
+      - enhancement
+  - title: '🐛 Corrección de errores'
+    labels:
+      - bug
+
+change-template: '- $TITLE (#$NUMBER)'
+no-changes-template: 'Sin cambios destacados.'
+
+template: |
+  ## Cambios incluidos
+
+  $CHANGES
