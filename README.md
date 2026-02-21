@@ -5,7 +5,7 @@ Implementación de un pipeline CI/CD con GitHub Actions.
 
 ---
 
-## 📌 Descripción del proyecto
+## Descripción del proyecto
 
 Este repositorio contiene la implementación práctica de un pipeline de Integración Continua (CI) y Entrega Continua (CD) utilizando GitHub Actions.
 
@@ -20,7 +20,7 @@ El objetivo es automatizar el proceso de:
 
 ---
 
-## ⚙️ Tecnologías utilizadas
+## Tecnologías utilizadas
 
 - GitHub Actions
 - Makefile
@@ -30,7 +30,7 @@ El objetivo es automatizar el proceso de:
 
 ---
 
-## 🔄 Flujo del Pipeline
+## Flujo del Pipeline
 
 El pipeline ejecuta automáticamente los siguientes pasos:
 
@@ -46,7 +46,7 @@ El pipeline ejecuta automáticamente los siguientes pasos:
 
 ---
 
-## 🚀 Releases automáticas
+## Releases automáticas
 
 Cada vez que se hace merge a la rama `main`, el workflow:
 
@@ -57,3 +57,17 @@ Cada vez que se hace merge a la rama `main`, el workflow:
 ---
 
 ## 📂 Estructura del repositorio
+
+.github/workflows/ # Workflows de GitHub Actions
+u3_tarea0/
+u3_tarea1/
+u3_tarea2/
+README.md
+
+
+---
+
+## 👩‍💻 Autora
+
+Andrea González  
+TSU en Desarrollo de Software de Código Abierto
