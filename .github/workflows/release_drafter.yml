@@ -1,5 +1,9 @@
 name: release_drafter
 
+permissions:
+  contents: write
+  pull-requests: write
+
 on:
   push:
     branches:
@@ -15,6 +19,6 @@ jobs:
       - name: Update draft release
         uses: release-drafter/release-drafter@v6
         with:
-          config-name: .github/release_drafter.yml
+          config-name: release_drafter.yml
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
