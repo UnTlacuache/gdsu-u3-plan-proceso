@@ -1,0 +1,21 @@
+name: u3_tarea0
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: "0 3 * * *"   # Se ejecuta diario a las 03:00 UTC
+
+jobs:
+  check-make-help:
+    runs-on: ubuntu-20.04
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run make help
+        run: |
+          cd u3_tarea0
+          make help
