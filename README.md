@@ -3,7 +3,6 @@
 ## Plan del Proceso de Desarrollo de Software III  
 Implementación de un pipeline CI/CD con GitHub Actions.
 
----
 
 ## Descripción del proyecto
 
@@ -18,7 +17,6 @@ El objetivo es automatizar el proceso de:
 - Generación automática de Releases
 - Documentación automática con Release Drafter
 
----
 
 ## Tecnologías utilizadas
 
@@ -28,7 +26,6 @@ El objetivo es automatizar el proceso de:
 - Flujo basado en Pull Requests
 - Control de versiones con Git
 
----
 
 ## Flujo del Pipeline
 
@@ -44,7 +41,6 @@ El pipeline ejecuta automáticamente los siguientes pasos:
 8. Empaquetado
 9. Creación automática de GitHub Release
 
----
 
 ## Releases automáticas
 
@@ -54,9 +50,8 @@ Cada vez que se hace merge a la rama `main`, el workflow:
 - Crea una nueva versión
 - Publica automáticamente el release en GitHub
 
----
 
-## 📂 Estructura del repositorio
+## Estructura del repositorio
 
 .github/workflows/ # Workflows de GitHub Actions
 u3_tarea0/
@@ -65,7 +60,6 @@ u3_tarea2/
 README.md
 
 
----
 
 ## 👩‍💻 Autora
 
